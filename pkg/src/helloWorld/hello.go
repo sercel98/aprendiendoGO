@@ -4,15 +4,15 @@ import "fmt"
 
 func main() {
 
-	serie := make([]int, 0)
+	var n int = 20
 
-	var nextNumber int = 1
+	fmt.Println(getFactorial(n))
 
-	for nextNumber < 1000 {
+}
 
-		serie = append(serie, nextNumber)
-		nextNumber++
+func getFactorial(n int) int {
+	if n <= 1 {
+		return 1
 	}
-
-	fmt.Println(serie)
+	return n * getFactorial(n-1)
 }
