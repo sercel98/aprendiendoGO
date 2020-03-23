@@ -13,11 +13,16 @@ func main() {
 
 	fmt.Println("Please, input the first number")
 	scanner.Scan()
-	a, _ := strconv.Atoi(scanner.Text())
+	a, error := strconv.Atoi(scanner.Text())
 
 	fmt.Println("Now, input the second number")
 	scanner.Scan()
-	b, _ := strconv.Atoi(scanner.Text())
+	b, error := strconv.Atoi(scanner.Text())
+
+	if error != nil {
+		fmt.Println("I'm sorry, there was an error!")
+		return
+	}
 
 	fmt.Println("Please, input the operation symbol(+,-,*,/) ")
 	scanner.Scan()
