@@ -7,6 +7,28 @@ import (
 	"strconv"
 )
 
+type calculator struct {
+	number1 int
+	number2 int
+}
+
+func (calculator) sum() int {
+	return calculatornumber1 + number2
+}
+
+func (calculator) rest(a int, b int) int {
+	return a - b
+}
+
+func (calculator) multiply(a int, b int) int {
+	return a * b
+}
+
+func (calculator) divide(a int, b int) float64 {
+	n1 := float64(a)
+	n2 := float64(b)
+	return n1 / n2
+}
 func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
@@ -21,7 +43,6 @@ func main() {
 
 	if error != nil {
 		fmt.Println("I'm sorry, there was an error!")
-		return
 	}
 
 	fmt.Println("Please, input the operation symbol(+,-,*,/) ")
@@ -38,22 +59,4 @@ func main() {
 		fmt.Println(divide(a, b))
 	}
 
-}
-
-func sum(a int, b int) int {
-	return a + b
-}
-
-func rest(a int, b int) int {
-	return a - b
-}
-
-func multiply(a int, b int) int {
-	return a * b
-}
-
-func divide(a int, b int) float64 {
-	n1 := float64(a)
-	n2 := float64(b)
-	return n1 / n2
 }

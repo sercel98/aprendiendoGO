@@ -61,7 +61,7 @@ func main() {
 	}
 
 	t3 := &task{
-		name:        "Reunión con Laura y Yeison",
+		name:        "Just a test",
 		description: "Martes a las 2 pm",
 	}
 
