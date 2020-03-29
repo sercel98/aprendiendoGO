@@ -12,8 +12,8 @@ type calculator struct {
 	number2 int
 }
 
-func (calculator) sum() int {
-	return calculatornumber1 + number2
+func (c calculator) sum() int {
+	return c.number1 + c.number2
 }
 
 func (calculator) rest(a int, b int) int {

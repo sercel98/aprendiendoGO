@@ -26,11 +26,11 @@ func main() {
 		"http://google.com",
 	}
 
-	for _, server := range servers {
-		go checkServer(server, channel)
-	}
-
-	for i := 0; i < len(servers); i++ {
+	for {
+		for _, server := range servers {
+			go checkServer(server, channel)
+		}
+		time.Sleep(1 * time.Second)
 		fmt.Println(<-channel)
 	}
 
