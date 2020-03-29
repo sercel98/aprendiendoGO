@@ -20,6 +20,14 @@ func (s *Server) Handle(path string, handler http.HandlerFunc) {
 	s.router.rules[path] = handler
 }
 
+//... operator used when I dont know how many paratemers are going to be sent but I know they are going to be Middleware type
+func (s *Server) AddMiddleware(f http.HandlerFunc, middlewares ...Middleware) http.HandlerFunc {
+	for _, m := range middlewares {
+		f = m(f)
+	}
+	return f
+}
+
 //Listen makes the server to start to listen to his port, throws error if there is any problem.
 func (s *Server) Listen() error {
 
