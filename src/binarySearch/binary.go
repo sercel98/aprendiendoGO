@@ -15,8 +15,8 @@ func main() {
 	n, error := strconv.Atoi(scanner.Text())
 
 	if error != nil {
-		//fmt.Println("We had some trouble. Sorry!")
-		//return
+		fmt.Println("We had some trouble. Sorry!")
+		return
 	}
 	n = 3
 
